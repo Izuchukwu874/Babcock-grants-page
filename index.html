@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Babcock Grants Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark py-0" style="background-color: #004282; height: 120px;">
+  <div class="container" style="max-width: 1440px;">
+
+    <a class="navbar-brand" href="#">
+      <img src="BU White Logo.png" alt="Babcock Logo" style="height: 64px; width: 198px; top: 28px; left: 125px;" />
+    </a>
+
+    <div class="ms-auto d-none d-lg-block">
+      <a href="https://babcock.edu.ng" class="text-white fw-semibold" style="font-size: 14px;">babcock.edu.ng</a>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container" style="max-width: 1440px;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav w-100 d-flex justify-content-between px-2">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Profiles</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Publications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Research units</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Student theses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Datasets</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Grants</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Press/Media</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+   
+ <section class="py-5" style="background-color: #F3F4F8;">
+  <div class="container text-center">
+    <div class="d-flex justify-content-center align-items-center mb-4">  
+      <img src="Frame 3465823.png" alt="Icon" class="img-fluid" style="max-height: 80px;">
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 position-relative">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search grants..." oninput="toggleClearButton()">
+        <button id="clearBtn" onclick="clearSearch()" class="btn position-absolute top-50 end-0 translate-middle-y me-3 px-2 py-0" style="display: none; font-weight: bold; font-size: 20px; color: #6c757d; background: transparent; border: none;">&times;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <div class="container mt-4 mb-3 responsive-header">
+  <div class="row align-items-center justify-content-between flex-wrap">
+    <div class="col-md-6 d-flex flex-wrap align-items-center gap-3">
+      <span class="text-muted small">Search in all content</span>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end align-items-center gap-4">
+     <span class="text-muted small">| 1-50 of 8,068 results</span>
+      <span class="text-muted small">| Last Name (Ascending)</span>
+      <a href="#" class="text-muted text-decoration-none" style="text-decoration: underline; border: none; background: none; padding: 0;">Export search results</a>
+    </div>
+  </div>
+ </div>
+  <!-- Grants Section -->
+<section class="py-5" style="background-color: #fff;">
+  <div class="container">
+    <div class="row">
+    
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Filters for Datasets</h6>
+
+        <div class="mb-3">
+          <label for="grantType" class="form-label small fw-bold">Grant Type</label>
+          <select class="form-select" id="grantType">
+            <option selected disabled>Select Grant Type</option>
+            <option>Internal (356)</option>
+            <option>External (336)</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="year" class="form-label small fw-bold">year</label>
+          <select class="form-select" id="year">
+            <option selected disabled>Select Year</option>
+            <option>2024 (7)</option>
+            <option>2023 (140)</option>
+            <option>2022 (97)</option>
+            <option>2021 (221)</option>
+            <option>2020 (130)</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="researchniche" class="form-label small fw-bold">Research Niche</label>
+          <select class="form-select" id="researchniche">
+            <option selected disabled>Select Niche</option>
+            <option>Christian Torp Pedersen (104)</option>
+            <option>Micheal Skovdal Rathleff (68)</option>
+            <option>Martin Bogsted (66)</option>
+            <option>Torsten Nygard Kristensen (64)</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="researchUnits" class="form-label small fw-bold">Research Units</label>
+          <select class="form-select" id="researchUnits">
+            <option selected disabled>Select Unit</option>
+            <option>The Faculty of Medicine (2361)</option>
+            <option>The Faculty of social Sciences and Humanities (1664)</option>
+            <option>Aalborg University Hospital (1428)</option>
+            <option>The Technical Faculty of IT and Design (1381)</option>
+          </select>
+        </div>
+      </div>
+
+      
+      <div class="col-md-9">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+        </div>
+        
+        <h5 class="fw-bold">2024</h5>
+
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div> 
+          
+       <div class="col-md-9">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+        </div>
+        <h5 class="fw-bold">2023</h5>
+
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value: $650,000, Research Niche: Food Security & Safety</p>
+        </div>
+
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value:$650,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value: $650,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value: $650,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: #650,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: #650,000, Research Niche: Food Security & Safety</p>
+        </div>
+
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $650,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $650,000, Research Niche: Food Security & Safety</p>
+        </div>
+        
+        <div class="mb-4">
+          <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Travel grant for paper presentation
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Ezinwanyi Adam, 13 Jan 2024</p>
+          <p class="small text-muted">Value: $30,000, Research Niche: Food Security & Safety</p>
+        </div>
+
+         <div class="mb-4">
+           <p class="mb-1">
+            <a href="#" class="text-decoration-none text-primary fw-semibold">
+              Building resilience through conservation agriculture among women farmers in Nigeria
+            </a>
+          </p>
+          <p class="small mb-0">Dr. Valerie Onyia and Prof. Grace Tayo, 18 Feb 2024</p>
+          <p class="small text-muted">Value: $650,000, Research Niche: Food Security & Safety</p>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Grants Pagination">
+          <ul class="pagination justify-content-center mt-5">
+            <li class="page-item disabled">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+ </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  function toggleClearButton() {
+    const input = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearBtn');
+    clearBtn.style.display = input.value ? 'block' : 'none';
+  }
+
+  function clearSearch() {
+    const input = document.getElementById('searchInput');
+    input.value = '';
+    toggleClearButton();
+    input.focus();
+  }
+</script>
+</body>
+</html>
