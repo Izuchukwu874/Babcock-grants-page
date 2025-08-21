@@ -9,6 +9,9 @@
   height: 27px;
   padding: 0.20px;
 }
+body {
+  padding-top: 80px;
+}
 
 #navbarMenu a {
   text-decoration: none;
@@ -37,6 +40,7 @@
   #navbarMenu {
     display: none !important;
   }
+}
 .hero-section {
   width: 100%;
   max-width: 1440px;
@@ -61,6 +65,32 @@
   width: 100px;
   margin-bottom: 1rem;
 }
+ .highlight-link {
+    color: #004282 !important; 
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .main-highlight {
+  width: 100%;
+  min-height: 295px;
+  background-color: rgba(243, 244, 248, 0.8); 
+  padding: 2rem;
+  }
+  .main-highlight .container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .funding-agency {
+    color: #004282;
+    font-weight: 600;
+  }
+
+  .project-description {
+    text-align: justify;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+  }
 @media (max-width: 768px) {
   .hero-section {
     padding: 40px 20px;
@@ -101,7 +131,6 @@
     margin-bottom: 10px;
   }
 
-  @media (max-width: 768px) {
     .responsive-header .d-flex {
       flex-direction: column;
       align-items: flex-start;
@@ -116,5 +145,5 @@
   
 
   
-}
+
 
